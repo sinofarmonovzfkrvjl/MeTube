@@ -7,6 +7,12 @@ import os
 
 profile = Blueprint("Profile", __name__, url_prefix="/profile")
 
+if not os.path.exists("videos"):
+    os.makedirs("videos")
+
+if not os.path.exists("images"):
+    os.makedirs("images")
+
 @profile.route("/", methods=["GET", "POST"])
 @login_required
 def profile_page():
@@ -20,8 +26,7 @@ def upload():
     if form.validate_on_submit():
         video_file = form.video.data
         video_filename = secure_filename(video_file.filename)
-        video_path = os.path.join("videos", video_filename)
-        video_file.save(video_path)
+        video_file.save(f"videos/{video_filename}")
 
         new_post = PostVideo(
             user=current_user,
