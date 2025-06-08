@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    background: #333;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.title {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    margin-left: 50px;
+}
+
+.sections {
+    margin-right: 50px;
+    display: flex;
+}
+
+.section {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.section:hover {
+    text-decoration: underline;
+}
+
+main { 
+    padding: 10px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | MeTube</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><h1><a href="#" class="title">Hello, {{ user.username }}</a></h1></div>
+        </div>
+        <div class="sections">
+            <a href="{{ url_for('Profile.upload') }}" class="section">Upload</a>
+            <a href="{{ url_for('logout') }}" class="section">Logout</a>
+            <a href="{{ url_for('Profile.edit_profile') }}" class="section">Edit Profile</a>
+        </div>
+    </header>
+    <main>
+        <h1>Your Videos</h1>
+        <div class="video-boxes">
+            {% for video in videos %}
+                {% if video.user_id == user.id %}
+                    <div class="video-box">
+                        <a href="/watch/{{ video.id }}">
+                            <video controls src="/videos/{{ video.video }}" width="400" height="500"></video>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

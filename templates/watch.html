@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch | MeTube</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        .user-rights a {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <video controls src="/videos/{{ post.video }}" width="900" height="600"></video>
+    <h1>{{ post.title }}</h1>
+    <h3>{{ post.date }}</h3>
+    <p>{{ post.body }}</p>
+    {% if post.user_id == current_user.id %}
+        <div class="user-rights">
+            <a href="/profile/delete/{{ post.id }}">Delete</a>
+            <a href="/profile/edit/{{ post.id }}">Edit</a>
+        </div>
+    {% endif %}
+    <br>
+</body>
+</html>

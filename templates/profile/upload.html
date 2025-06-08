@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload | MeTube</title>
+</head>
+<body>
+    <form action="/profile/upload" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.title.label }}: {{ form.title }} <br>
+        {{ form.date.label }}: {{ form.date }} <br>
+        {{ form.body.label }}: {{ form.body }} <br>
+        {{ form.video.label }}: {{ form.video }} <br>
+        {{ form.submit }}
+    </form>
+</body>
+</html>

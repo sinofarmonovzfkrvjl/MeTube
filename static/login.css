@@ -1,0 +1,15 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 250px;
+}
+
+.wrapper {
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
